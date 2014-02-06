@@ -9,7 +9,7 @@ set BASE_MAIN (basename $MAIN_CLASS .java)
 if test $argv = "build" 
     echo Building
     javac -d $BLD_DIR $SRC_FILES
-	codemark $SRC_DIR/$MAIN_CLASS $SRC_FILES > $BLD_DIR/$MAIN_CLASS.md
+	codemark $SRC_DIR/$MAIN_CLASS $SRC_FILES > $BLD_DIR/$BASE_MAIN.md
 else if test $argv = "run"
     echo Running 
     java -cp $BLD_DIR $BASE_MAIN
