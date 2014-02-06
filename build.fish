@@ -2,6 +2,7 @@
 set SRC_DIR $PWD/src
 set BLD_DIR $PWD/bld
 set SRC_FILES $SRC_DIR/*.java
+
 set MAIN_CLASS Chapter08Project05.java
 set BASE_MAIN (basename $MAIN_CLASS .java)
 
@@ -11,7 +12,7 @@ if test $argv = "build"
 	codemark $SRC_DIR/$MAIN_CLASS $SRC_FILES > $BLD_DIR/$MAIN_CLASS.md
 else if test $argv = "run"
     echo Running 
-    java -cp $BLD_DIR $MAIN_CLASS
+    java -cp $BLD_DIR $BASE_MAIN
 else if test $argv = "shoot"
 	echo Shooting 
 	screencapture -w $BLD_DIR/$BASE_MAIN.png 
